@@ -1,3 +1,4 @@
 eclipse.preferences.version=1
-wsPort=9723
-wssPort=9732
+localServeSecretKey=vjwqsvgclu
+wsPort=8271
+wssPort=8280
