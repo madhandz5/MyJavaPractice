@@ -1,0 +1,27 @@
+package com.prac.json.run;
+
+public class Run {
+
+	public static void main(String[] args) {
+
+		Gson gson = new Gson();
+		try {
+			JsonObject jObj = gson.fromJson(new FileReader(new File("resources/Book_top100.json")), JsonObject.class);
+
+			JsonArray jsonArray = jObj.getAsJsonArray("DATA");
+
+			for (JsonElement jsonElement : jsonArray) {
+				JsonObject result = jsonElement.getAsJsonObject();
+				System.out.println(result.get("title").getAsString());
+			}
+		} catch (JsonSyntaxException e) {
+			e.printStackTrace();
+		} catch (JsonIOException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

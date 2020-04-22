@@ -1,0 +1,41 @@
+package com.prac.json.run;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonSyntaxException;
+
+public class Run {
+
+	public static void main(String[] args) {
+
+		URL url = null;
+		
+		
+		Gson gson = new Gson();
+		try {
+			JsonObject jObj = gson.fromJson("파일명 들어갔던자리", JsonObject.class);
+
+			JsonArray jsonArray = jObj.getAsJsonArray("DATA");
+
+			for (JsonElement jsonElement : jsonArray) {
+				JsonObject result = jsonElement.getAsJsonObject();
+				System.out.println(result.get("title").getAsString());
+			}
+		} catch (JsonSyntaxException e) {
+			e.printStackTrace();
+		} catch (JsonIOException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

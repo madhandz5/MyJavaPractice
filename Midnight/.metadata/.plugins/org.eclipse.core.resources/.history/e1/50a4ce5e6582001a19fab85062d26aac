@@ -1,0 +1,66 @@
+package com.prac.json.run;
+
+import java.io.BufferedInputStream;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+import javax.net.ssl.HttpsURLConnection;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonSyntaxException;
+
+public class Run {
+
+	public static void main(String[] args) {
+
+		URL url = null;
+		HttpsURLConnection conn = null;
+		BufferedReader br = null;
+		BufferedInputStream bis = null;
+		String res = "";
+		Gson gson = new Gson();
+
+		try {
+
+			url = new URL("https://dapi.kakao.com/v3/search/book?target=title&query=ÀÚ¹Ù");
+			conn = (HttpsURLConnection) url.openConnection();
+			conn.setRequestMethod("GET");
+			conn.setRequestProperty("Authorization", "KakaoAK 04a4ff3be0ac0a724b4508b9c7ae2d07");
+			conn.connect();
+
+			br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+			String test = "";
+			while ((test = br.readLine()) != null) {
+				res += test;
+			}
+
+			JsonObject jObj = gson.fromJson(res, JsonObject.class);
+
+			JsonArray jsonArray = jObj.getAsJsonArray("documents");
+
+			for (JsonElement jsonElement : jsonArray) {
+				JsonObject result = jsonElement.getAsJsonObject();
+				System.out.println(result.get("title").getAsString());
+			}
+
+		} catch (JsonSyntaxException e) {
+			e.printStackTrace();
+		} catch (JsonIOException e) {
+			e.printStackTrace();
+		} catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
+
+}

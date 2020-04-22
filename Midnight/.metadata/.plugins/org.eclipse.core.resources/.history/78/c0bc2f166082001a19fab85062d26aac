@@ -1,0 +1,41 @@
+package com.prac.json.run;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonIOException;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonSyntaxException;
+
+public class Run {
+
+	public static void main(String[] args) {
+
+		Gson gson = new Gson();
+
+		try {
+			JsonObject jsonObject = gson.fromJson(new FileReader(new File("resources/Book_top100.json")),
+					JsonObject.class);
+
+			JsonArray jsonArray = jsonObject.getAsJsonArray("DATA");
+
+			for (JsonElement jsonElement : jsonArray) {
+				jsonElement.getAsString();
+				
+				
+			}
+
+		} catch (JsonSyntaxException e) {
+			e.printStackTrace();
+		} catch (JsonIOException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+
+	}
+}

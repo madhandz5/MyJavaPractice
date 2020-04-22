@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        text-align: center;
+    }
+    table{
+        margin: auto;
+    }
+    #searchKeyword{
+        width: 300px;
+        font-size:20px;
+    }
+    #searchKeyword::placeholder{
+        text-align: center;
+        color : lightgrey;
+        font-weight: bold;
+        font-size: 21px;
+    }
+
+    #sortType,#pageCnt,#searchType{
+        height:29px;
+        font-size:20px;
+        transform : translateY(3px);
+    }
+    #searchBtn{
+        font-size:20px;
+        height: 29px;
+        transform : translateY(3.5px);
+        border-radius: 40px/40px;
+    }
+    .authors, .title{
+        text-align: left;
+        overflow: hidden;
+    }
+
+    button:hover{
+        cursor: pointer;
+        background-color:grey;
+    }
+    table>thead{
+        background-color: lightgrey;
+        color: black;
+        font-weight: bold;
+        font-size: 22px;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <h1>도서검색 API 연습</h1>
+        <hr>
+        <select id="searchType">
+            <option value="title">제목</option>
+            <option value="person">작가</option>
+            <option value="publisher">출판사</option>
+            <option value="isbn">ISBN</option>
+        </select>
+
+        <select id="sortType">
+            <option value="accuracy">정확도순</option>
+            <option value="recency">최근순</option>
+        </select>
+
+        <input type="text" id="searchKeyword" placeholder="검색어를 입력하세요">
+        <button id="searchBtn">검색하기</button>
+
+
+
+        <select id="pageCnt">
+            <option value="10">10개</option>
+            <option value="25">25개</option>
+            <option value="50">50개</option>
+        </select>
+
+       
+        <div class="none" style="display: none;">검색된 결과가 없습니다.</div>
+        <br><br>
+        <table id="contents" border="1" style="display:none;">
+            <thead>
+                <tr>
+                    <td>번호</td>
+                    <td style="width: 600px;">제목</td>
+                    <td>작가</td>
+                    <td>표지</td>
+                    <td>가격</td>
+                    <td>구매하기</td>
+                </tr>
+            </thead>
+            <tbody id="body">
+            </tbody>
+        </table>
+        <br>
+        <div id="buttonWrapper" style="display: none; ">
+            <button class="prev">이전페이지</button>
+            <button class="next">다음페이지</button>
+        </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.js"
+        integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+
+
+    <script>
+
+        $(function () {
+
+            var pageNo = 1;
+            var isEnd = null;
+            var salePrice = 0;
+            var price = 0;
+            var salePer = 0;
+
+            $("#searchKeyword").keydown(function (key) {
+                if (key.keyCode == 13) {
+                    $("#searchBtn").click();
+                }
+
+            });
+
+
+            $("#searchBtn").click(function () {
+                pageNo = 1;
+                if ($("#searchKeyword").val() === "") {
+                    alert("검색어를 입력해주세요");
+                } else {
+                    searchBook(pageNo);
+                }
+            });
+
+
+            function searchBook(pageNo) {
+                $("#body").html("");
+                $(".none").css({ "display": "none" });
+
+                $.ajax({
+                    method: "GET",
+                    url: "https://dapi.kakao.com/v3/search/book",
+                    data:
+                    {
+                        query: $("#searchKeyword").val(),
+                        page: pageNo,
+                        size: $("#pageCnt").val(),
+                        sort: $("#sortType").val(),
+                        target: $("#searchType").val()
+                    },
+                    headers: { Authorization: "KakaoAK 04a4ff3be0ac0a724b4508b9c7ae2d07" }
+                })
+                    .done(function (hi) {
+                        if (hi.documents.length > 0) {
+                            console.log(hi);
+                            $("#contents").css({ "display": "table" });
+                            $("#buttonWrapper").css({ "display": "block" });
+
+                            isEnd = hi.meta.is_end;
+
+                            for (var i = 0; i < hi.documents.length; i++) {
+                                price = hi.documents[i].price;
+                                salePrice = hi.documents[i].sale_price;
+                                salePer = 100 - ((salePrice / price) * 100);
+                                if (salePrice <= 0) {
+                                    salePrice = "품절";
+                                    salePer = 0;
+                                }
+                                $("#body").append("<tr id=trow" + i + "><td>" + (i + 1) + "</td>");
+                                $("#trow" + i).append("<td class='title'>" + hi.documents[i].title + "</td>");
+                                $("#trow" + i).append("<td class='authors'>" + hi.documents[i].authors + "</td>");
+                                if (hi.documents[i].thumbnail == "") {
+                                    $("#trow" + i).append("<td><span>이미지가 없습니다.</span></td>");
+                                } else {
+                                    $("#trow" + i).append("<td><img class='thumbnails' src='" + hi.documents[i].thumbnail + "'></td>");
+                                }
+                                if (price === salePrice) {
+                                    $("#trow" + i).append("<td>" + price + "</td>");
+                                } else if(salePrice == "품절"){
+                                    $("#trow" + i).append("<td style='color:red'>품절</td>");
+                                } else if(salePrice < price){
+                                    $("#trow" + i).append("<td><span style='text-decoration:line-through; text-decoration-color:red; text-decoration-style:double;'>" + price + "</span><span><br>→" + salePrice + "<br>(" + salePer + "%할인)</span></td>");
+                                }else{
+                                    $("#trow" + i).append("<td>" + price + "</td>");
+                                }
+
+                                if(salePrice=="품절"){
+                                    $("#trow" + i).append("<td><button onclick=alert('품절입니다.')>구매하기</button></td></tr>");
+                                }else{
+                                    $("#trow" + i).append("<td><a href='" + hi.documents[i].url + "'><button>구매하기</button></a></td></tr>");
+                                }
+                                
+                            }
+                        } else {
+                            $("#buttonWrapper").css({ "display": "none" });
+                            $("#contents").css({ "display": "none" });
+                            $(".none").css({ "display": "block" });
+                        }
+                    });
+            }
+            $(".next").click(function () {
+                if (isEnd == true) {
+                    alert("마지막 페이지 입니다.");
+                } else {
+                    searchBook(++pageNo);
+                }
+            });
+
+            $(".prev").click(function () {
+                if (pageNo == 1) {
+                    alert("첫번째 페이지 입니다.");
+                } else {
+                    searchBook(--pageNo);
+                }
+            });
+
+
+            $("#pageCnt").change(function () {
+                searchBook(pageNo);
+            });
+
+        });
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
