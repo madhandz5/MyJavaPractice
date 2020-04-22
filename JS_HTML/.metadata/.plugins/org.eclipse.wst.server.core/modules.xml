@@ -1,12 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <modules>
-  <module moduleId="org.eclipse.jst.jee.server:servlet01Project" serverId="servlet01Project"/>
-  <module moduleId="org.eclipse.jst.jee.server:BMProject" serverId="BM_Servlet"/>
-  <module moduleId="org.eclipse.jst.jee.server:JSP PJ" serverId="JSP"/>
-  <module moduleId="org.eclipse.jst.jee.server:BMServlet" serverId="BMServlet"/>
-  <module moduleId="org.eclipse.jst.jee.server:JSPPJ" serverId="JSPPJ"/>
-  <module moduleId="org.eclipse.jst.jee.server:로그인연습" serverId="loginPrac"/>
-  <module moduleId="org.eclipse.jst.jee.server:servletBM" serverId="BMServlet"/>
-  <module moduleId="org.eclipse.jst.jee.server:Semi" serverId="servlet01Project"/>
-  <module moduleId="org.eclipse.jst.jee.server:ELJSTL" serverId="ELJSTL"/>
+  <module moduleId="org.eclipse.jst.jee.server:servletBM" serverId="serlvetBM"/>
 </modules>

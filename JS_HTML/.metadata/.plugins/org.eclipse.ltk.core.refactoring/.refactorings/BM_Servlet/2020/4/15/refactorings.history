@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Move 2 elements to &apos;BMProject/src/common&apos;&#x0D;&#x0A;- Original project: &apos;BM_Servlet&apos;&#x0D;&#x0A;- Destination element: &apos;BMProject/src/common&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     common.DataSetting.java&#x0D;&#x0A;     common.JDBCTemplate.java&#x0D;&#x0A;- Update references to refactored element" description="Move compilation units" destination="=BMProject/src&lt;common" element1="/src&lt;common{DataSetting.java" element2="/src&lt;common{JDBCTemplate.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1586342573871" units="2" version="1.0"/>
-</session>

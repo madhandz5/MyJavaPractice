@@ -1,20 +1,9 @@
-/**
- * 
- */
 package bm.notice.controller;
 
-import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
-
-import org.omg.IOP.TAG_RMI_CUSTOM_MAX_STREAM_FORMAT;
-
-import com.oreilly.servlet.MultipartRequest;
-import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import bm.member.model.vo.Member;
 import bm.notice.model.service.NoticeService;
@@ -24,10 +13,6 @@ import common.frontcontroller.ModelAndView;
 import common.util.FileUtil;
 import common.vo.UploadFile;
 
-/**
- * @author user2
- *
- */
 public class NoticeController implements Controller {
 
 	NoticeService ns = new NoticeService();

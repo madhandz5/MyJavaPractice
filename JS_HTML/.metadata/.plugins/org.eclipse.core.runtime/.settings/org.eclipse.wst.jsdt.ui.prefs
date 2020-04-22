@@ -1,6 +1,8 @@
+content_assist_autoactivation=true
+content_assist_autoactivation_triggers_java=.abcdefghijklmnopqrstuvwxyz
 eclipse.preferences.version=1
 fontPropagated=true
-org.eclipse.jface.textfont=1|Hack|16.0|0|WINDOWS|1|0|0|0|0|0|0|0|0|1|0|0|0|0|Hack;
+org.eclipse.jface.textfont=1|Hack|15.75|0|WINDOWS|1|-21|0|0|0|400|0|0|0|0|3|2|1|49|Hack;
 org.eclipse.wst.jsdt.internal.ui.navigator.layout=1
 org.eclipse.wst.jsdt.ui.editor.tab.width=
 org.eclipse.wst.jsdt.ui.formatterprofiles.version=11

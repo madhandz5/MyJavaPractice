@@ -1,18 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <servers>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/BMServlet-config" deployDir="wtpwebapps" hostname="localhost" id="BMServlet" name="BMServlet" runtime-id="BMServlet" serveModulesWithoutPublish="true" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="100" stop-timeout="100" testEnvironment="true" timestamp="11">
+  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/serlvetBM-config" deployDir="wtpwebapps" hostname="localhost" id="serlvetBM" name="serlvetBM" runtime-id="serlvetBM" serveModulesWithoutPublish="true" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="2">
     <list key="modules" value0="servletBM::org.eclipse.jst.jee.server:servletBM::jst.web::3.1"/>
-  </server>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/JSPPJ-config" deployDir="wtpwebapps" hostname="localhost" id="JSPPJ" name="JSPPJ" runtime-id="JSPPJ" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="1">
-    <list key="modules" value0="JSPPJ::org.eclipse.jst.jee.server:JSPPJ::jst.web::3.0"/>
-  </server>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/ELJSTL-config" deployDir="wtpwebapps" hostname="localhost" id="ELJSTL" name="ELJSTL" runtime-id="ELJSTL" serveModulesWithoutPublish="false" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="4">
-    <list key="modules" value0="ELJSTL::org.eclipse.jst.jee.server:ELJSTL::jst.web::3.0"/>
-  </server>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/loginPrac-config" deployDir="wtpwebapps" hostname="localhost" id="loginPrac" name="loginPrac" runtime-id="loginPrac" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="1">
-    <list key="modules" value0="로그인연습::org.eclipse.jst.jee.server:로그인연습::jst.web::3.0"/>
-  </server>
-  <server auto-publish-setting="2" auto-publish-time="1" configuration-id="/Servers/semiSMW-config" deployDir="wtpwebapps" hostname="localhost" id="semiSMW" name="semiSMW" runtime-id="semiSMW" serveModulesWithoutPublish="true" server-type="org.eclipse.jst.server.tomcat.85" server-type-id="org.eclipse.jst.server.tomcat.85" start-timeout="45" stop-timeout="15" testEnvironment="true" timestamp="2">
-    <list key="modules" value0="semiSMW::org.eclipse.jst.jee.server:semiSMW::jst.web::3.0"/>
   </server>
 </servers>

@@ -1,8 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <publish-info>
-  <server id="JSPPJ" path="publish5.dat"/>
-  <server id="ELJSTL" path="publish6.dat"/>
-  <server id="semiSMW" path="publish8.dat"/>
-  <server id="BMServlet" path="publish3.dat"/>
-  <server id="loginPrac" path="publish7.dat"/>
+  <server id="serlvetBM" path="publish0.dat"/>
 </publish-info>
