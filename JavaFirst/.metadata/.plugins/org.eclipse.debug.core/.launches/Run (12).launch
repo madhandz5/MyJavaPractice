@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/주말과제_02_0111_도서관리/src/com/kh/library/run/Run.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="com.kh.library.run.Run"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="주말과제_02_0111_도서관리"/>
+</launchConfiguration>

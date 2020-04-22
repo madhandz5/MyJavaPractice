@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;scroll.js&apos; to &apos;Js&apos;&#x0D;&#x0A;- Original project: &apos;JavaScript&apos;&#x0D;&#x0A;- Destination element: &apos;Js&apos;&#x0D;&#x0A;- Original element: &apos;scroll.js&apos;" description="Copy file" element1="Resources/js/scroll.js" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1586258258925" target="/servlet01Project/web/resources/Js" units="0" version="1.0"/>
+</session>

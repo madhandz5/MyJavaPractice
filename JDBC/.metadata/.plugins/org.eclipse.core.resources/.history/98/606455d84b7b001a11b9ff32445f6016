@@ -1,0 +1,30 @@
+package com.kh.jdbc.practice;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class Practice2 {
+	public static void main(String[] args) {
+
+		Connection con = null;
+		
+		
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			// * 2단계. 계정연결
+			// - URL , 계정명, 비밀번호
+			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String user = "TGIF";
+			String passWord = "test11";
+
+			con = DriverManager.getConnection(url, user, passWord);
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+
+	}
+}

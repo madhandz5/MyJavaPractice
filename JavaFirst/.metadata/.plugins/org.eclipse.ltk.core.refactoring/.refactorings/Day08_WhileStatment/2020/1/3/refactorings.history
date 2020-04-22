@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move package &apos;com.kh.day08.whileStatment&apos; to &apos;Day08_BranchingStatment, Method, WhileStatment/src&apos;&#x0D;&#x0A;- Original project: &apos;Day08_WhileStatment&apos;&#x0D;&#x0A;- Destination element: &apos;Day08_BranchingStatment, Method, WhileStatment/src&apos;&#x0D;&#x0A;- Original element: &apos;Day08_WhileStatment/src/com.kh.day08.whileStatment&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move package" destination="=Day08_BranchingStatment, Method, WhileStatment/src" element1="/src&lt;com.kh.day08.whileStatment" flags="589830" fragments="1" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.movePackages" stamp="1578900613732" version="1.0"/>
+</session>

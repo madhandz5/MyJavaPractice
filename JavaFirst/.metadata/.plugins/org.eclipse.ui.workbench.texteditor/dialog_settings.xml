@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item value="false" key="isRegEx"/>
+		<item value="Read" key="selection"/>
+		<item value="false" key="casesensitive"/>
+		<item value="false" key="incremental"/>
+		<item value="true" key="wrap"/>
+		<item value="false" key="wholeword"/>
+		<list key="findhistory">
+			<item value="read"/>
+			<item value="readline"/>
+			<item value="sock"/>
+			<item value="socket"/>
+			<item value="private JTextArea Title;"/>
+			<item value="ㄴ"/>
+			<item value="luckey"/>
+			<item value="필드변수"/>
+			<item value="메서드"/>
+			<item value="aptjem"/>
+			<item value="identityHashCode"/>
+			<item value="j"/>
+		</list>
+		<list key="replacehistory">
+			<item value="&gt;"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item value="366" key="DIALOG_WIDTH"/>
+		<item value="1|Hack|9.75|0|WINDOWS|1|-13|0|0|0|400|0|0|0|0|3|2|1|49|Hack" key="DIALOG_FONT_NAME"/>
+		<item value="391" key="DIALOG_HEIGHT"/>
+		<item value="679" key="DIALOG_X_ORIGIN"/>
+		<item value="268" key="DIALOG_Y_ORIGIN"/>
+	</section>
+</section>

@@ -1,0 +1,21 @@
+{
+  "folders": [
+    {
+        "path": "C:\\Users\\user2\\OneDrive\\JS_HTML\\servlet01Project"
+    },
+    {
+        "path": "C:\\Users\\user2\\OneDrive\\JS_HTML\\JavaScript"
+    },
+    {
+        "path": "C:\\Users\\user2\\OneDrive\\JS_HTML\\JSPPJ"
+    }
+],
+  "settings": {
+    "editor.detectIndentation": false,
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    }
+  }
+}

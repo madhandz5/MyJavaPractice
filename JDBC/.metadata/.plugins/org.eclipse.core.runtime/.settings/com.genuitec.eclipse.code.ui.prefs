@@ -1,0 +1,5 @@
+codemix.settings.migration=true
+codemix.show.validation.tip=shown
+deletedObsoleteMarkers=true
+displaySyntaxColorInfo=false
+eclipse.preferences.version=1

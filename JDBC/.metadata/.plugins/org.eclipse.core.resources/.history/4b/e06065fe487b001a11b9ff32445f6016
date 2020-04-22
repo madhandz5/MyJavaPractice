@@ -1,0 +1,55 @@
+package com.kh.jdbc.practice;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+public class Practice {
+
+	public static void main(String[] args) {
+
+		try {
+			// * JDBC 5단계
+			// * 1단계. 드라이버 연결
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+
+			// * 2단계. 계정연결
+			// - URL , 계정명, 비밀번호
+			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String user = "TGIF";
+			String passWord = "test11";
+
+			Connection con = DriverManager.getConnection(url, user, passWord);
+
+			// * 3단계. 쿼리준비
+			Statement stmt = con.createStatement();
+			String sql = "SELECT * FROM TB_STOCK";
+
+			// * 4단계. 실행 및 리턴
+			ResultSet rs = stmt.executeQuery(sql);
+
+			while (rs.next()) {
+				String item = rs.getString(1);
+				String type = rs.getString(2);
+				int price = rs.getInt(3);
+				// int stock = rs.getInt(4);
+
+				System.out.println("상품명 : " + item);
+				System.out.println("상품타입 : " + type);
+				System.out.println("가격 : " + price);
+				System.out.println("재고 : " + stock);
+			}
+
+			// * 5단계. DB종료
+
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			System.out.println("클래스 없대용..ㅠㅠ");
+		} catch (SQLException e) {
+			System.out.println("SQL EXCEPTION 났어용..ㅠㅠ");
+		}
+
+	}
+}

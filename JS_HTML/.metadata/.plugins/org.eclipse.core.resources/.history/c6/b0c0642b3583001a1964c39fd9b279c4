@@ -1,0 +1,11 @@
+package bm.notice.model.dao;
+
+import common.JDBCTemplate;
+
+public class NoticeDao {
+
+	JDBCTemplate jdt = JDBCTemplate.getInstance();
+
+
+
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/피씨방카운터/src/view_HUD/Login_Fr_Hud.java"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="view_HUD.Login_Fr_Hud"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="피씨방카운터"/>
+</launchConfiguration>

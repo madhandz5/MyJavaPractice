@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.kh.view.BookMeny&apos; to &apos;BookMenu&apos;&#x0D;&#x0A;- Original project: &apos;주말과제_04_03-04_List문제_Map사용&apos;&#x0D;&#x0A;- Original element: &apos;com.kh.view.BookMeny&apos;&#x0D;&#x0A;- Renamed element: &apos;com.kh.view.BookMenu&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;BookMeny&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;com.kh.view{BookMeny.java[BookMeny" matchStrategy="1" name="BookMenu" qualified="false" references="true" similarDeclarations="false" stamp="1579524222427" textual="false" version="1.0"/>
+</session>

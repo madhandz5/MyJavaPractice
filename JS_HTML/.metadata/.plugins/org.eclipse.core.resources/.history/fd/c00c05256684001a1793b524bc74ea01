@@ -1,0 +1,25 @@
+package common.util;
+
+import javax.servlet.http.HttpServletRequest;
+
+import common.vo.UploadFile;
+
+public class FileUtil {
+
+	public UploadFile fileUpload(String uploadFolder, HttpServletRequest request) {
+		UploadFile uf = new UploadFile();
+
+		int maxSize = 1024 * 1024 * 10;
+
+		String originFileName = "";
+
+		String renameFileName = "";
+
+		String root = request.getServletContext().getRealPath("/");
+
+		String savePath = root + uploadFolder;
+
+		return uf;
+	}
+
+}

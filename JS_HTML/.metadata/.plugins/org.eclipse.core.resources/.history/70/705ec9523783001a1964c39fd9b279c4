@@ -1,0 +1,28 @@
+package bm.notice.model.service;
+
+import java.sql.Connection;
+
+import bm.notice.model.dao.NoticeDao;
+import bm.notice.model.vo.Notice;
+import common.JDBCTemplate;
+
+public class NoticeService {
+
+	JDBCTemplate jdt = JDBCTemplate.getInstance();
+	NoticeDao nDao = new NoticeDao();
+
+	public int noticeUpload(Notice notice) {
+		int res = 0;
+		Connection conn = jdt.getConnection();
+
+		try {
+
+		} finally {
+			jdt.close(conn);
+		}
+
+		return res;
+
+	}
+
+}

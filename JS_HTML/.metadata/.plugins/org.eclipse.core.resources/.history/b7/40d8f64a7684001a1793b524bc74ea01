@@ -1,0 +1,65 @@
+package common.util;
+
+public class Paging {
+
+	// 현재 페이지
+	private int currentPage;
+	// 전체 게시물 수
+	private int total;
+	// 페이지당 게시물
+	private int cntPerPage;
+
+	//블록 안의 페이지 수
+	private int blockCnt = 5;
+
+	// 블록 시작 번호
+	private int blockStart;
+	// 블록 끝 번호
+	private int blockEnd;
+	// 전체 페이지 수
+	private int lastPage;
+
+	// sql에서 사용할 시작 값
+	private int start;
+	// sql에서 사용할 끝 값
+	private int end;
+
+	public Paging() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Paging(int currentPage, int total, int cntPerPage) {
+		super();
+		this.currentPage = currentPage;
+		this.total = total;
+		this.cntPerPage = cntPerPage;
+		//
+	}
+
+	public void calAllPage(int total, int cntPerPage) {
+
+		lastPage = ((total - 1) / cntPerPage) + 1;
+
+	}
+
+	// 현재 페이지 넘버 : 23
+	// 블록당 페이지 넘버 : 5
+	// << < 21 22 23 24 25 > >>
+	//현재 블록의 마지막 번호 : ((23-1)/5 +1) *5
+	// 현재 블록의 첫 번호 :
+	// 현재 블록의 마지막 번호 - 블록당 페이지 넘 수 + 1
+	// (23/5)*5+1
+
+	//블럭당 시작 끝 페이지 넘버 구하기
+
+	public void calBlockStar(int currentPage, int blockCnt) {
+
+		blockEnd = ((currentPage - 1) / blockCnt) * blockCnt;
+		if(lastPage < blockEnd) {
+			blockEnd = lastPage;
+		}
+
+	}
+
+}

@@ -1,0 +1,16 @@
+127.0.0.1 - - [20/Apr/2020:00:11:05 +0900] "GET / HTTP/1.1" 404 750
+127.0.0.1 - - [20/Apr/2020:00:11:06 +0900] "GET /servletBM/index/index.do HTTP/1.1" 200 10112
+127.0.0.1 - - [20/Apr/2020:00:11:13 +0900] "GET /servletBM/book/booksearch.do?bookSearch=%EC%84%A4%EB%AF%BC%EC%84%9D HTTP/1.1" 200 13345
+127.0.0.1 - - [20/Apr/2020:00:11:17 +0900] "GET /servletBM/book/booksearch.do?searchBook=%EC%84%A4%EB%AF%BC%EC%84%9D HTTP/1.1" 200 14525
+127.0.0.1 - - [20/Apr/2020:00:12:03 +0900] "GET /servletBM/book/booksearch.do?bookSearch=%EC%84%A4%EB%AF%BC%EC%84%9D HTTP/1.1" 200 13345
+127.0.0.1 - - [20/Apr/2020:00:12:20 +0900] "GET / HTTP/1.1" 404 750
+127.0.0.1 - - [20/Apr/2020:00:12:21 +0900] "GET /servletBM/index/index.do HTTP/1.1" 200 10112
+127.0.0.1 - - [20/Apr/2020:00:12:35 +0900] "GET /servletBM/book/booksearch.do?searchBook=%EC%84%A4%EB%AF%BC%EC%84%9D HTTP/1.1" 200 14525
+127.0.0.1 - - [20/Apr/2020:00:12:55 +0900] "GET /servletBM/book/booksearch.do?searchBook=%EB%82%98 HTTP/1.1" 200 22204
+127.0.0.1 - - [20/Apr/2020:00:13:59 +0900] "GET /servletBM/book/booksearch.do?searchBook=%EA%B9%80%EC%A7%80%EC%98%81 HTTP/1.1" 200 13894
+127.0.0.1 - - [20/Apr/2020:00:16:12 +0900] "GET /servletBM/image/loginCover.jpg HTTP/1.1" 404 788
+127.0.0.1 - - [20/Apr/2020:00:16:52 +0900] "GET /servletBM/book/booksearch.do?searchBook=%EC%84%A4%EB%AF%BC%EC%84%9D HTTP/1.1" 200 14525
+127.0.0.1 - - [20/Apr/2020:00:18:10 +0900] "GET /servletBM/book/booksearch.do?searchBook=%EC%84%A4%EB%AF%BC%EC%84%9D HTTP/1.1" 200 14513
+127.0.0.1 - - [20/Apr/2020:00:18:11 +0900] "GET /servletBM/book/booksearch.do?searchBook=%EC%84%A4%EB%AF%BC%EC%84%9D HTTP/1.1" 200 14513
+127.0.0.1 - - [20/Apr/2020:00:18:15 +0900] "GET /servletBM/book/booksearch.do?searchBook=%EC%84%A4%EB%AF%BC%EC%84%9D HTTP/1.1" 200 14485
+127.0.0.1 - - [20/Apr/2020:00:22:33 +0900] "GET /servletBM/member/join.do HTTP/1.1" 200 2802

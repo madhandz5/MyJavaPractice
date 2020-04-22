@@ -1,0 +1,42 @@
+package common.util;
+
+public class Paging {
+
+	// 현재 페이지
+	private int currentPage;
+	// 전체 게시물 수
+	private int total;
+	// 페이지당 게시물 수
+	private int cntPerPage;
+	// 블록 시작 번호
+	private int blockStart;
+	// 블록 끝 번호
+	private int blockEnd;
+	// 전체 페이지 수
+	private int lastPage;
+
+	// sql에서 사용할 시작 값
+	private int start;
+	// sql에서 사용할 끝 값
+	private int end;
+
+	public Paging() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Paging(int currentPage, int total, int cntPerPage) {
+		super();
+		this.currentPage = currentPage;
+		this.total = total;
+		this.cntPerPage = cntPerPage;
+		//
+	}
+
+	public void calAllPage(int total, int cntPerPage) {
+
+		lastPage = (total-1) / cntPerPage + 1;
+		
+	}
+
+}

@@ -1,0 +1,53 @@
+package bm.notice.model.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import bm.notice.model.vo.Notice;
+import common.JDBCTemplate;
+import common.util.Paging;
+
+public class NoticeDao {
+
+	JDBCTemplate jdt = JDBCTemplate.getInstance();
+
+	public List<Notice> selectNoticeList(Connection conn, Paging p, String orderby) {
+		List<Notice> nList = new ArrayList<Notice>();
+
+		//		select * from 
+		//		(select rownum rnum, n1.*
+		//		from
+		//		(select * from tb_book
+		//		order by b_bno desc) n1)
+		//		where rnum between 5 and 10;
+
+		String sql = "select * from (select rownum rnum, n1.* from (select * from tb_book order by" + orderby
+				+ "desc) n1) where rnum between 5 and 10";
+
+		return nList;
+	}
+
+	public int noticeUpload(Connection conn, Notice notice) throws SQLException {
+		int res = 0;
+
+		PreparedStatement pstm = null;
+		String sql = "INSERT INTO TB_NOTICE VALUES(S_NOTICE.NEXTVAL,?,sysdate,?,?,?,?)";
+
+		try {
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, notice.getNoticeTitle());
+			pstm.setString(2, notice.getNoticeWriter());
+			pstm.setString(3, notice.getNoticeContent());
+			pstm.setString(4, notice.getOriginal_filepath());
+			pstm.setString(5, notice.getRename_filepath());
+			res = pstm.executeUpdate();
+		} finally {
+			jdt.close(pstm);
+		}
+		return res;
+	}
+}

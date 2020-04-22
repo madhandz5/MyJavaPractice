@@ -1,0 +1,12 @@
+/**
+ * 
+ */
+package common.vo;
+
+/**
+ * @author user2
+ *
+ */
+public class UploadFile {
+
+}

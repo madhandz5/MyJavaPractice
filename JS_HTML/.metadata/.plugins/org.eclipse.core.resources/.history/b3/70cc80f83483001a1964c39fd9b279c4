@@ -1,0 +1,36 @@
+package bm.notice.model.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import bm.notice.model.vo.Notice;
+import common.JDBCTemplate;
+
+public class NoticeDao {
+
+	JDBCTemplate jdt = JDBCTemplate.getInstance();
+
+	public int noticeUpload(Connection conn, Notice notice) throws SQLException {
+		int res = 0;
+
+		PreparedStatement pstm = null;
+		String sql = "INSERT INTO TB_NOTICE VALUES(S_NOTICE.NEXTVAL,?,SYSDATE,?,?,?,?)";
+
+		try {
+			pstm = conn.prepareStatement(sql);
+			pstm.setString(1, notice.getNoticeTitle());
+			pstm.setString(2, notice.getNoticeWriter());
+			pstm.setString(3, notice.getNoticeContent());
+			pstm.setString(4, notice.getOriginal_filepath());
+			pstm.setString(5, notice.getRename_filepath());
+			pstm.executeUpdate();
+		} finally {
+			jdt.close(pstm);
+		}
+
+		return res;
+	}
+	
+
+}

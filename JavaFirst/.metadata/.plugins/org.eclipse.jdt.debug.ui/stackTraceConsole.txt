@@ -1,0 +1,3 @@
+// “주차 번호 : “       >> 입력 받음 (carNum)  // ParkingTowerManager의 deleteCar 메소드로 parkingNo 전달  // ? 리턴 값 전달 받음 (res) 
+ 
+ // res가 null이 아닐 경우  >> res 출력, “차량 출차 완료!” 출력  // res가 null일 경우  >> “입력하신 차량이 주차되어 있지 않습니다.”출력 
